@@ -1,0 +1,1 @@
+export default function MessageBubble({ message }) { return <div className={`message-bubble ${message.role === 'user' ? 'user' : 'medora'}`}><p>{message.text}</p>{message.sources?.length > 0 && <div className="source-chips">{message.sources.map((source) => <span className="source-chip" key={source}>{source}</span>)}</div>}</div> }

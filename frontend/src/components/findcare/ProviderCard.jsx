@@ -1,0 +1,2 @@
+import PrototypeBadge from './PrototypeBadge'
+export default function ProviderCard({ provider }) { return <article className="provider-card"><PrototypeBadge /><h3>{provider.name}</h3><p>{provider.specialty}</p><span>{provider.location}</span></article> }

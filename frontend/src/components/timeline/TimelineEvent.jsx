@@ -1,0 +1,2 @@
+import SourceLink from './SourceLink'
+export default function TimelineEvent({ event, uncertain = false }) { return <article className="timeline-event"><span className="timeline-date">{event.date}</span><span className="timeline-dot" /><div><span className="event-type">{event.type}</span><h3>{event.provider}</h3><SourceLink documentName={event.source} />{uncertain && <span className="warning-chip">Check against original</span>}</div></article> }

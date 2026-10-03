@@ -1,0 +1,1 @@
+export default function SuggestedQuestions({ questions = ['What does this mean?', 'Show my recent records'] , onSelect }) { return <div className="suggested-questions">{questions.map((question) => <button type="button" className="pill" onClick={() => onSelect?.(question)} key={question}>{question}</button>)}</div> }

@@ -1,0 +1,1 @@
+export default function DisclaimerBanner({ children = 'An AI tool, not a doctor. Every answer shows the document it came from.' }) { return <div className="disclaimer"><span className="notice-icon">!</span><span>{children}</span></div> }

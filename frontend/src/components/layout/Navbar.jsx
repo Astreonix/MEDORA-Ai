@@ -1,0 +1,4 @@
+import { useState } from 'react'
+import { useAuth } from '../../context/AuthContext'
+import Icon from '../common/Icon'
+export default function Navbar({ onMenu }) { const { user } = useAuth(); const [open, setOpen] = useState(false); return <header className="navbar"><button className="mobile-menu" onClick={onMenu} aria-label="Open navigation"><Icon name="menu" /></button><div className="breadcrumbs">My care <span><Icon name="arrow" size={12} /></span> <strong>MEDORA</strong></div><div className="nav-user"><button className="notification" aria-label="Notifications"><Icon name="spark" /></button><button className="user-button" onClick={() => setOpen(!open)}><span className="avatar">AM</span><span>{user?.name || 'Alex Morgan'}</span><Icon name="chevron" size={15} /></button>{open && <div className="user-menu">Signed in as<br /><strong>{user?.email || 'alex@example.com'}</strong></div>}</div></header> }

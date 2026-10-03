@@ -1,0 +1,1 @@
+export default function TermExplainer({ term = '[medical term]', explanation = 'A simple explanation will appear here.' }) { return <div className="simplifier-card"><p className="eyebrow">SIMPLE EXPLANATION</p><h3>{term}</h3><p>{explanation}</p></div> }

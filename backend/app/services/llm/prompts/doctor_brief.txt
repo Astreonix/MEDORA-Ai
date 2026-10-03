@@ -1,0 +1,1 @@
+Create a concise doctor-visit brief using only stored extracted information. Keep source document references on every line and list uncertain values separately.

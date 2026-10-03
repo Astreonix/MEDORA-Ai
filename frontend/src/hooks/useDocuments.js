@@ -1,0 +1,3 @@
+import { useEffect, useState } from 'react'
+import { getDocuments } from '../services/documentService'
+export default function useDocuments() { const [documents, setDocuments] = useState([]); const [loading, setLoading] = useState(true); useEffect(() => { let active = true; getDocuments().then((items) => { if (active) setDocuments(items) }).finally(() => { if (active) setLoading(false) }); return () => { active = false } }, []); return { documents, loading, setDocuments } }

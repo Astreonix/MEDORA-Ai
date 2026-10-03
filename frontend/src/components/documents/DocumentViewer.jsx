@@ -1,0 +1,1 @@
+export default function DocumentViewer({ document }) { return <div className="document-viewer" aria-label="Original document preview"><div className="document-sheet"><span>ORIGINAL DOCUMENT</span><h3>{document?.name || '[document]'}</h3><p>{document?.type || '[document type]'}</p><p>{document?.date || '[date]'}</p><div className="document-lines" /></div></div> }

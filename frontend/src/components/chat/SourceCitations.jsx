@@ -1,0 +1,1 @@
+export default function SourceCitations({ sources = [] }) { return <div className="source-chips">{sources.map((source) => <span className="source-chip" key={source}>Source: {source}</span>)}</div> }

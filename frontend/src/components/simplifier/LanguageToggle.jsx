@@ -1,0 +1,1 @@
+export default function LanguageToggle({ language = 'English', onChange }) { return <div className="language-toggle" role="group" aria-label="Explanation language">{['English', 'Roman Urdu'].map((option) => <button type="button" className={language === option ? 'active' : ''} onClick={() => onChange?.(option)} key={option}>{option}</button>)}</div> }

@@ -1,0 +1,5 @@
+import { NavLink } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
+import Icon from '../common/Icon'
+const links = [['Dashboard','/dashboard','home'],['Upload','/upload','upload'],['Documents','/documents','docs'],['Timeline','/timeline','timeline'],['Ask MEDORA','/ask-medora','spark'],['Simplifier','/simplifier','simplify'],['Doctor Brief','/doctor-brief','brief'],['Find care','/find-care','care']]
+export default function Sidebar() { const { signOut } = useAuth(); return <aside className="sidebar"><div className="brand"><span className="brand-mark">m</span><span>MEDORA</span></div><nav className="side-nav">{links.map(([label, to, icon]) => <NavLink key={to} to={to} className={({ isActive }) => isActive ? 'side-link active' : 'side-link'}><span className="side-icon"><Icon name={icon} /></span>{label}</NavLink>)}</nav><div className="sidebar-bottom"><p>MEDORA is an AI tool.<br />It does not replace a doctor.</p><button className="side-signout" onClick={signOut}>Sign out</button></div></aside> }

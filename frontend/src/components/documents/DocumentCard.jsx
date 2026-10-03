@@ -1,0 +1,3 @@
+import { Link } from 'react-router-dom'
+import Icon from '../common/Icon'
+export default function DocumentCard({ document }) { return <Link to={`/documents/${document.id}`} className="document-card"><div className="document-top"><span className="type-chip">{document.type}</span><span className="status-chip">{document.status || 'Processed'}</span></div><h3>{document.name}</h3><p>{document.date}</p><Icon name="arrow" size={16} /></Link> }

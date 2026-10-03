@@ -1,0 +1,1 @@
+export default function BriefExport() { return <div className="heading-actions"><button type="button" className="btn btn-secondary" onClick={() => window.print()}>Print</button><button type="button" className="btn btn-primary" onClick={() => window.print()}>Download PDF</button></div> }

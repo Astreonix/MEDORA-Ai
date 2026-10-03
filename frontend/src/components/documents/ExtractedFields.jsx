@@ -1,0 +1,2 @@
+import ConfidenceBadge from '../common/ConfidenceBadge'
+export default function ExtractedFields({ fields = [] }) { return <div className="extracted-fields">{fields.map((field) => <div className="extracted-field" key={field.label}><span>{field.label}</span><strong>{field.value}</strong><ConfidenceBadge confidence={field.confidence || 'High'} /></div>)}</div> }

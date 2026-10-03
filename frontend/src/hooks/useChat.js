@@ -1,0 +1,3 @@
+import { useState } from 'react'
+import { askMedora } from '../services/chatService'
+export default function useChat() { const [messages, setMessages] = useState([]); const [loading, setLoading] = useState(false); const ask = async (text) => { if (!text?.trim()) return; setMessages((current) => [...current, { role: 'user', text }]); setLoading(true); try { const response = await askMedora(text); setMessages((current) => [...current, { role: 'medora', text: response.answer, sources: [response.source] }]) } finally { setLoading(false) } }; return { messages, loading, ask } }

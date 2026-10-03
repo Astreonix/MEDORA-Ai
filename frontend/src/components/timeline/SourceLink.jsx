@@ -1,0 +1,2 @@
+import { Link } from 'react-router-dom'
+export default function SourceLink({ documentId = '1', documentName = '[document]' }) { return <Link className="source-chip" to={`/documents/${documentId}`}>Source: {documentName}</Link> }

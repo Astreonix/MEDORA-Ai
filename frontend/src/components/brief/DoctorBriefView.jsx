@@ -1,0 +1,1 @@
+export default function DoctorBriefView({ sections = [] }) { return <article className="brief-paper">{sections.map((section) => <section key={section.title}><h3>{section.title}</h3><p>{section.value || '[documented information]'}</p>{section.source && <span className="source-chip">Source: {section.source}</span>}</section>)}</article> }

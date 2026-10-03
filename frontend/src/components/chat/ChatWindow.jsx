@@ -1,0 +1,2 @@
+import MessageBubble from './MessageBubble'
+export default function ChatWindow({ messages = [], onAsk }) { return <div className="chat-window">{messages.map((message, index) => <MessageBubble message={message} key={index} />)}<form className="chat-input" onSubmit={(event) => { event.preventDefault(); onAsk?.(event.currentTarget.elements.question.value); event.currentTarget.reset() }}><label htmlFor="question">Ask MEDORA</label><input id="question" name="question" placeholder="Ask about your records" /><button className="btn btn-primary">Ask</button></form></div> }

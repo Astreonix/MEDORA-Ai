@@ -1,0 +1,1 @@
+export default function PrototypeBadge() { return <span className="prototype-badge">Prototype</span> }

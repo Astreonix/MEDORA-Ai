@@ -1,0 +1,1 @@
+export default function CareFilters({ onChange }) { return <div className="care-filters">{['Specialty', 'Location', 'Visit type', 'Cost'].map((label) => <label key={label}>{label}<select defaultValue=""><option value="" disabled>{`[${label.toLowerCase()}]`}</option><option>Sample option</option></select></label>)}</div> }

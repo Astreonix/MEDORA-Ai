@@ -1,0 +1,1 @@
+export default function Footer() { return <footer className="footer"><span>MEDORA</span><span>Private by design.</span><span>Not a replacement for medical advice.</span></footer> }

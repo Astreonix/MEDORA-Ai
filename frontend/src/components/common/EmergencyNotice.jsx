@@ -1,0 +1,1 @@
+export default function EmergencyNotice() { return <div className="warning-box"><strong>Check against original</strong><span>Some details may need review. Please confirm this value in the original document or with your doctor.</span></div> }

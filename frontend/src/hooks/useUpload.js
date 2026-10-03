@@ -1,0 +1,2 @@
+import { useState } from 'react'
+export default function useUpload() { const [files, setFiles] = useState([]); const addFiles = (nextFiles) => setFiles((current) => [...current, ...nextFiles]); const removeFile = (name) => setFiles((current) => current.filter((file) => file.name !== name)); return { files, addFiles, removeFile, setFiles } }

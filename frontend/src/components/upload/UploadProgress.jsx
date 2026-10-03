@@ -1,0 +1,1 @@
+export default function UploadProgress({ file, status = 'Processing', progress = 55 }) { return <div className="progress-row"><div><strong>{file?.name || '[document]'}</strong><span>{status}</span></div><div className="progress"><i style={{ width: `${progress}%` }} /></div></div> }

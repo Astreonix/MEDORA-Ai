@@ -1,0 +1,1 @@
+export default function ConfidenceBadge({ value = 'High confidence', low = false }) { return <span className={`confidence ${low ? 'confidence-low' : ''}`}>{value}</span> }

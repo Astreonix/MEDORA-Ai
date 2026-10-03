@@ -1,0 +1,21 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Landing from '../pages/Landing'
+import Login from '../pages/Login'
+import Register from '../pages/Register'
+import NotFound from '../pages/NotFound'
+import ProtectedRoute from './ProtectedRoute'
+import AppShell from '../components/layout/AppShell'
+import Dashboard from '../pages/Dashboard'
+import UploadPage from '../pages/UploadPage'
+import DocumentsPage from '../pages/DocumentsPage'
+import DocumentDetailPage from '../pages/DocumentDetailPage'
+import TimelinePage from '../pages/TimelinePage'
+import AskMedoraPage from '../pages/AskMedoraPage'
+import SimplifierPage from '../pages/SimplifierPage'
+import DoctorBriefPage from '../pages/DoctorBriefPage'
+import FindCarePage from '../pages/FindCarePage'
+import ComparePage from '../pages/ComparePage'
+import StoryPage from '../pages/StoryPage'
+export default function AppRoutes() {
+  return <Routes><Route path="/" element={<Landing />} /><Route path="/login" element={<Login />} /><Route path="/register" element={<Register />} /><Route element={<ProtectedRoute />}><Route element={<AppShell />}><Route path="/dashboard" element={<Dashboard />} /><Route path="/upload" element={<UploadPage />} /><Route path="/documents" element={<DocumentsPage />} /><Route path="/documents/:documentId" element={<DocumentDetailPage />} /><Route path="/timeline" element={<TimelinePage />} /><Route path="/ask" element={<AskMedoraPage />} /><Route path="/ask-medora" element={<Navigate to="/ask" replace />} /><Route path="/simplifier" element={<SimplifierPage />} /><Route path="/brief" element={<DoctorBriefPage />} /><Route path="/doctor-brief" element={<Navigate to="/brief" replace />} /><Route path="/find-care" element={<FindCarePage />} /><Route path="/compare" element={<ComparePage />} /><Route path="/story" element={<StoryPage />} /></Route></Route><Route path="/404" element={<NotFound />} /><Route path="*" element={<Navigate to="/404" replace />} /></Routes>
+}

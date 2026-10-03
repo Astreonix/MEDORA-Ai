@@ -1,0 +1,2 @@
+import UploadProgress from './UploadProgress'
+export default function FileList({ files = [] }) { return <div>{files.map((file, index) => <UploadProgress key={`${file.name}-${index}`} file={file} status={index ? 'Processing' : 'Done'} progress={index ? 40 : 100} />)}</div> }
