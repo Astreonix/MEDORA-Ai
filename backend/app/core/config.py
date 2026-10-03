@@ -12,7 +12,10 @@ class Settings(BaseSettings):
     jwt_secret: str = "change-me-in-production"
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 60
-    cors_origins: list[str] = ["http://localhost:5173"]
+    cors_origins: list[str] = [
+        "http://localhost:5173",
+        "https://medora-ai-psi.vercel.app",
+    ]
     max_upload_bytes: int = 15 * 1024 * 1024
     llm_provider: str = "fallback"
     gemini_api_key: str = ""

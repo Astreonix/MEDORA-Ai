@@ -15,7 +15,7 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: CORS_ORIGINS
-        sync: false
+        value: https://medora-ai-psi.vercel.app
       - key: LLM_PROVIDER
         value: gemini
       - key: GEMINI_API_KEY
