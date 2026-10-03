@@ -28,6 +28,7 @@ Set `VITE_API_URL=http://localhost:8000` in `frontend/.env` to connect the front
 ## Deployment
 
 - Render uses the root [render.yaml](./render.yaml) and deploys the FastAPI service from `backend/`.
+- If deploying the API to Vercel instead, set Vercel's Root Directory to `backend/`; its handler is [backend/api/index.py](./backend/api/index.py).
 - Vercel uses [frontend/vercel.json](./frontend/vercel.json), with root directory `frontend`, build command `npm run build`, and output directory `dist`.
 - Set `CORS_ORIGINS` on Render to the deployed Vercel URL.
 

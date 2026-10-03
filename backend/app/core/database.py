@@ -1,6 +1,6 @@
 from collections.abc import Generator
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 from sqlalchemy.pool import StaticPool
 
@@ -31,5 +31,19 @@ def get_db() -> Generator[Session, None, None]:
 
 def init_db() -> None:
     from app.models import audit_log, chat_session, chunk, document, medical_event, user
+
+    if settings.database_url.startswith("postgresql"):
+        # Vercel can start several instances at the same time. PostgreSQL
+        # advisory locking prevents concurrent CREATE TABLE statements from
+        # colliding during cold starts.
+        with engine.begin() as connection:
+            connection.execute(text("SELECT pg_advisory_lock(hashtext('medora_schema_init'))"))
+            try:
+                Base.metadata.create_all(bind=connection)
+            finally:
+                connection.execute(
+                    text("SELECT pg_advisory_unlock(hashtext('medora_schema_init'))")
+                )
+        return
 
     Base.metadata.create_all(bind=engine)

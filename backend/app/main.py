@@ -28,3 +28,8 @@ app.include_router(api_router, prefix="/api/v1")
 @app.get("/health", tags=["health"])
 def health() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/", tags=["health"])
+def root() -> dict[str, str]:
+    return {"service": settings.app_name, "status": "ok", "health": "/health"}

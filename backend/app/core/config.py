@@ -36,7 +36,9 @@ class Settings(BaseSettings):
     def normalize_database_url(cls, value: Any) -> str:
         if not value:
             return "sqlite+pysqlite:///:memory:"
-        value = str(value)
+        value = str(value).strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'"}:
+            value = value[1:-1].strip()
         if value.startswith("postgres://"):
             return "postgresql+psycopg://" + value[len("postgres://") :]
         if value.startswith("postgresql://") and "+psycopg" not in value:
