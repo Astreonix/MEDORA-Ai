@@ -94,9 +94,6 @@ medora/
 ├── docs/                  # hackathon document, folder structure PDF, architecture notes
 └── sample-data/           # FAKE demo reports only
 ```
-
-The full layout is in [`docs/MEDORA_Folder_Structure.pdf`](docs/MEDORA_Folder_Structure.pdf).
-
 ---
 
 ## ⚡ Run It Locally
